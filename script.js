@@ -8,7 +8,7 @@ function generateTarget() {
 	targetNum = Math.floor(Math.random() * 10);
 	return targetNum;
 }
-
+//not confident this is working; testing isn't displaying a win message
 function compareGuesses(humanGuess, computerGuess, targetNum) {
 
 	// comparison of absolute values of difference between guesses and target 
@@ -18,5 +18,14 @@ function compareGuesses(humanGuess, computerGuess, targetNum) {
 		return true; 
 	} else {
 		return false; 
+	}
+}
+
+function updateScore(winner) {
+	if (winner === 'human') {
+		humanScore += 1; 
+	}
+	if (winner === 'computer') {
+		computerScore += 1; 
 	}
 }

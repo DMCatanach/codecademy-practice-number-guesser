@@ -9,6 +9,13 @@ function generateTarget() {
 	return targetNum;
 }
 
+//function to check for valid user input
+function checkInput(humanGuess) {
+	if ((humanGuess > 9) || (humanGuess < 0)) {
+		alert('Please enter a number between 0 and 9.')
+	}
+}
+
 //helper function for compareGuesses, working now that I have the right number of parens in call in compareGuesses
 function getAbsoluteDistance(target, guess) {
 	return (Math.abs(target - guess));
@@ -16,6 +23,7 @@ function getAbsoluteDistance(target, guess) {
 
 function compareGuesses(humanGuess, computerGuess, targetNum) {
 
+	checkInput(humanGuess) //checks input and gives an alert if input is outside of range, but game continues otherwise
 	// comparison of absolute values of difference between guesses and target 
 	if ((getAbsoluteDistance(targetNum, humanGuess)) < (getAbsoluteDistance(targetNum, computerGuess))) {
 		return true; 

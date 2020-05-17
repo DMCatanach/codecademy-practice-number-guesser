@@ -9,10 +9,15 @@ function generateTarget() {
 	return targetNum;
 }
 
+//helper function for compareGuesses, working now that I have the right number of parens in call in compareGuesses
+function getAbsoluteDistance(target, guess) {
+	return (Math.abs(target - guess));
+} 
+
 function compareGuesses(humanGuess, computerGuess, targetNum) {
 
 	// comparison of absolute values of difference between guesses and target 
-	if ((Math.abs(targetNum - humanGuess)) < (Math.abs(targetNum - computerGuess))) {
+	if ((getAbsoluteDistance(targetNum, humanGuess)) < (getAbsoluteDistance(targetNum, computerGuess))) {
 		return true; 
 	} else if (humanGuess === computerGuess) {
 		return true; 

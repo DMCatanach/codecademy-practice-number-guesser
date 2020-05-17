@@ -10,11 +10,11 @@ function generateTarget() {
 }
 
 function compareGuesses(humanGuess, computerGuess, targetNum) {
-	if (humanGuess === computerGuess) {
-		return true; 
-	}
+
 	// comparison of absolute values of difference between guesses and target 
-	if (Math.abs(targetNum - humanGuess) < Math.abs(targetNum - computerGuess)) {
+	if ((Math.abs(targetNum - humanGuess)) < (Math.abs(targetNum - computerGuess))) {
+		return true; 
+	} else if (humanGuess === computerGuess) {
 		return true; 
 	} else {
 		return false; 
